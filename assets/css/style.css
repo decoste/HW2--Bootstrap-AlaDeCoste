@@ -1,0 +1,39 @@
+.nav-left {
+    position: absolute;
+    right: 30px;
+}
+.container {
+    font-family: 'Sansita Swashed', cursive;
+   
+    width: 100%;
+  }
+nav{
+    font-family: 'Sansita Swashed', cursive;
+}
+/* From stackoverflow  */
+.center-div{
+    background-color:white;
+    margin: 0 auto;
+    width:30%;
+    border: 1px solid #ccc;
+}
+h3{
+    margin-left: 10px;
+   padding-top: 10px;
+   color: #007BFF;
+}
+ .h{    
+     padding-bottom: 50px;
+ }
+ .submit-btn {
+     margin-left: 20px;
+     margin-bottom: 20px;
+ }
+ footer{
+     text-size-adjust: 5px;
+     text-align: center;
+ }
+ body{
+    background-image:  url("../images/background.png");
+ }
+
