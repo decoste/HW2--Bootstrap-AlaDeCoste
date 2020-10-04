@@ -4,7 +4,6 @@
 }
 .container {
     font-family: 'Sansita Swashed', cursive;
-   
     width: 100%;
   }
 nav{
@@ -41,6 +40,7 @@ section{
  }
  body{
     background-image:  url("../images/background.png");
+    /*background image from https://www.pngitem.com*/
  }
  footer {
     position: fixed;
@@ -63,6 +63,8 @@ section{
 img{
     width: 450px;
     height: 450px;
+    margin-right:10px;
+    margin-bottom:10px;
 }
 .cont {
 	display: flex;
@@ -78,4 +80,12 @@ img{
 }
 p{
     margin-left: 20px;
+}
+.placeHolder{
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+div{
+    line-height: 20px
 }
