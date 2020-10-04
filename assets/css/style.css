@@ -17,13 +17,19 @@ nav{
     width:30%;
     border: 1px solid #ccc;
 }
-h3{
+h2{
     margin-left: 10px;
    padding-top: 10px;
    color: #007BFF;
 }
- .h{    
+h3{
+    color:#08073B;
+}
+section{    
      padding-bottom: 50px;
+     float: right;
+     margin-top: 100px;
+     margin-right: 75px;
  }
  .submit-btn {
      margin-left: 20px;
@@ -36,4 +42,15 @@ h3{
  body{
     background-image:  url("../images/background.png");
  }
-
+ footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #08073B;
+    color: white;
+    text-align: center;
+ }
+ h4{
+    padding-bottom: 20px;
+ }
