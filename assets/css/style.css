@@ -54,3 +54,28 @@ section{
  h4{
     padding-bottom: 20px;
  }
+ .me{
+    font-family: 'Sansita Swashed', cursive;
+    margin-left: 50px;
+    color:#08073B;
+    text-decoration: underline;
+ }
+img{
+    width: 450px;
+    height: 450px;
+}
+.cont {
+	display: flex;
+    flex-direction: row;
+    height: 455px;
+    font-family: 'Sansita Swashed', cursive;
+}
+
+.middle {
+    width: 455px;
+    border-style: solid;
+    margin-left: 300px;
+}
+p{
+    margin-left: 20px;
+}
