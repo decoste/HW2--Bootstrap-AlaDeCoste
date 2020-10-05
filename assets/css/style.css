@@ -4,17 +4,20 @@
 }
 .container {
     font-family: 'Sansita Swashed', cursive;
-    width: 100%;
+    width: 100px;
+    display: flex;
+	flex-direction: row;
   }
 nav{
     font-family: 'Sansita Swashed', cursive;
 }
 /* From stackoverflow  */
-.center-div{
-    background-color:white;
+.center{
+    background-color:white; 
+    border: 1px solid  #007BFF;
+    width: 400px;
     margin: 0 auto;
-    width:30%;
-    border: 1px solid #ccc;
+    margin-top: 20px;
 }
 h2{
     margin-left: 10px;
@@ -23,12 +26,11 @@ h2{
 }
 h3{
     color:#08073B;
+    padding-bottom: 5px;
 }
 section{    
      padding-bottom: 50px;
-     float: right;
-     margin-top: 100px;
-     margin-right: 75px;
+     min-height: 250px;
  }
  .submit-btn {
      margin-left: 20px;
@@ -51,16 +53,13 @@ section{
     color: white;
     text-align: center;
  }
- h4{
-    padding-bottom: 20px;
- }
  .me{
     font-family: 'Sansita Swashed', cursive;
     margin-left: 50px;
     color:#08073B;
     text-decoration: underline;
  }
-img{
+.cont img{
     width: 450px;
     height: 450px;
     margin-right:10px;
@@ -71,21 +70,34 @@ img{
     flex-direction: row;
     height: 455px;
     font-family: 'Sansita Swashed', cursive;
+    margin-top: 100px;
 }
 
 .middle {
     width: 455px;
     border-style: solid;
-    margin-left: 300px;
+    margin-left: 200px;
 }
 p{
     margin-left: 20px;
 }
 .placeHolder{
+    margin-top: 75px;
     width: 100%;
-    margin-top: 20px;
     margin-left: 20px;
+}
+.placeHolder img{
+    margin-bottom: 20px;
+    width: 450px;
+    height: 450px;
+    display: inline-block;
+    margin-right: 60px;
 }
 div{
     line-height: 20px
+}
+.contact{
+width: 350px;
+margin-top: 60px;
+margin-right: 40px;
 }
