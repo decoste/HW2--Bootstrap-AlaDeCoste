@@ -24,7 +24,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="./assets/Documents/fsf-09-node.pdf">
+    <link rel="stylesheet" href="./assets/Documents/fsf-09-node.pdf">
     <title>Contact</title>
 </head>
 
@@ -42,11 +42,13 @@
             <div class="nav-left">
                 <div class="navbar-nav">
                     <a class="nav-item nav-link active" href="index.html">Home</a>
-                        <a class="nav-item nav-link" href="contact.html">Contact</a>
-                        <a class="nav-item nav-link" href="portfolio.html">Portfolio</a>
-                        <a class="nav-item nav-link" href="certifications.html">Certifications</a>
-                        <a class="nav-item nav-link" href="education.html">Education</a>
-                        <a class="nav-item nav-link"  href="javascript:void(0);" onclick="javascipt:window.open('./employer-ready-vs-competitive.pdf')" target="_blank">Resume</a>
+                    <a class="nav-item nav-link" href="contact.html">Contact</a>
+                    <a class="nav-item nav-link" href="portfolio.html">Portfolio</a>
+                    <a class="nav-item nav-link" href="certifications.html">Certifications</a>
+                    <a class="nav-item nav-link" href="education.html">Education</a>
+                    <a class="nav-item nav-link" href="javascript:void(0);"
+                        onclick="javascipt:window.open('./assets/Documents/resume.pdf')"
+                        target="_blank">Resume</a>
                 </div>
             </div>
         </div>
@@ -67,25 +69,26 @@
             <form action="https://formspree.io/f/xyybpwrk" method="post">
                 <div class="form-group col-md-10">
                     <div class="invalid">
-                    <label  for="exampleInputPassword1">Subject </label>
-                    <p id="sub"></p>
-                    <input id="subject" name="subject" type="text" class="form-control" placeholder="Name">
-                </div>
-                </div>
-                <div class="form-group col-md-10">
-                    <div class="invalid">
-                    <label for="exampleInputEmail1">Email</label>
-                    <p id="e-mail"></p>
-                    <input id="email" name="email" type="email" class="form-control" id="exampleInputEmail1"
-                        aria-describedby="emailHelp" placeholder="Enter email">
+                        <label for="exampleInputPassword1">Subject </label>
+                        <p id="sub"></p>
+                        <input id="subject" name="subject" type="text" class="form-control" placeholder="Subject">
                     </div>
                 </div>
                 <div class="form-group col-md-10">
                     <div class="invalid">
-                    <label for="exampleFormControlTextarea1">Message</label>
-                    <p id="text"></p>
-                    <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <label for="exampleInputEmail1">Email</label>
+                        <p id="e-mail"></p>
+                        <input id="email" name="email" type="email" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="Enter email">
+                    </div>
                 </div>
+                <div class="form-group col-md-10">
+                    <div class="invalid">
+                        <label for="exampleFormControlTextarea1">Message</label>
+                        <p id="text"></p>
+                        <textarea name="message" class="form-control" id="exampleFormControlTextarea1"
+                            rows="3"></textarea>
+                    </div>
                 </div>
                 <div class="status"></div>
                 <button id="btn1" type="submit" class="btn btn-primary submit-btn">Submit</button>
