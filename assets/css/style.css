@@ -72,7 +72,6 @@ section{
     font-family: 'Sansita Swashed', cursive;
     margin-top: 100px;
 }
-
 .middle {
     width: 455px;
     border-style: solid;
@@ -100,4 +99,62 @@ div{
 width: 350px;
 margin-top: 60px;
 margin-right: 40px;
+}
+.invalid p {
+    display:inline-block;
+    color: red;
+}
+.icon{
+    font-size:130px;
+    color:#A9A9A9;
+}
+.mid{
+    width: 1400px;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-left: 80px;
+    height: 450px;
+    font-family: 'Sansita Swashed', cursive;
+    font-weight: bold;
+    font-size: 20px;
+}
+i{
+    padding: 120px;
+    margin-top: 40px;
+}
+.one{
+width: 370px;
+float:left;
+height:400px;
+margin:20px;
+margin-left: 0px;
+}
+.two {
+    width: 370px;
+    float:left;
+    height:400px;
+    margin:20px;
+    margin-left: 0px;
+}
+.three {
+    width: 370px;
+    float:left;
+    height:400px;
+    margin:20px;
+    margin-left: 0px;
+}
+.one p{
+  
+    margin-left: 130px;
+}
+.two p{
+
+    margin-left: 130px; 
+}
+.three p{
+    margin-left: 150px;
+}
+.cert img{
+   width: 230px;
+   height: 250px;
 }
