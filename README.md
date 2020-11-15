@@ -1,5 +1,7 @@
 # HW2-Bootstrap-AlaDeCoste
 
+Hello! :raising_hand:
+
 My name is Ala DeCoste, and I arrived in the United States in October of 2015 from Jordan.  I have a bachelor’s degree in software engineering from Al Balqa’ Applied University (my years of attendance being from 2005-2010).
 
 Since 2017 I have been employed at Idexx Laboratories as a data analyst and am certified in Splunk Core Power user.    Additionally, I work part-time as an Arabic interpreter.
