@@ -92,6 +92,16 @@ margin-right: 40px;
     display:inline-block;
     color: red;
 }
+.midd{
+    width: 1300px;
+    margin: 0 auto;
+    margin-top: 160px;
+    margin-left: 80px;
+    height: 250px;
+    font-family: 'Sansita Swashed', cursive;
+    font-weight: bold;
+    font-size: 20px;
+}
 .mid{
     width: 1200px;
     margin: 0 auto;
@@ -131,7 +141,7 @@ margin-left: 0px;
     margin-left: 0px;
 }
 .three {
-    width: 370px;
+    width: 460px;
     float:left;
     height:400px;
     margin:20px;
@@ -146,7 +156,7 @@ margin-left: 0px;
     margin-left: 130px; 
 }
 .three p{
-    margin-left: 150px;
+    margin-left: 90px;
 }
 .cert img{
    width: 230px;
