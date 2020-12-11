@@ -17,6 +17,7 @@ $(document).ready(function () {
         } else {
             event.preventDefault();
             $('#e-mail').text('Email is not valid!')
+            $("#e-mail").show();
         }
 
         if (subject.length >= 2) {
