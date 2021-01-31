@@ -80,6 +80,11 @@ section{
 p{
     margin-left: 20px;
 }
+svg{
+    margin-right: 30px;
+    margin-left: 30px;
+    color: black;
+}
 div{
     line-height: 20px
 }
