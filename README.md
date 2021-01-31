@@ -15,5 +15,5 @@ The application link: https://decoste.github.io/HW2-Bootstrap-AlaDeCoste/
 
 The following GIF demonstrates the application functionality:
 
-![Portfolio website demo](./assets/images/portfolio.gif)
+![Portfolio website demo](./assets/images/website.gif)
  
