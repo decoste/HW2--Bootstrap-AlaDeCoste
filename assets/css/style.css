@@ -176,12 +176,28 @@ margin-left: 0px;
 position: relative;
   width:550px;
   font-family: 'Sansita Swashed', cursive;
-  background-color: hotpink;
+
   float:left;
 margin:40px;
 margin-left: 20px;
 }
 .capsule img{
+    width: 550px;
+    display: inline-block;
+    margin-right: 60px;
+}
+.test{
+
+    margin-top: 75px;
+    margin-left: 20px;
+  width:550px;
+  font-family: 'Sansita Swashed', cursive;
+
+  float:left;
+margin:40px;
+margin-left: 20px;
+}
+.test img{
     width: 550px;
     display: inline-block;
     margin-right: 60px;
@@ -221,11 +237,7 @@ margin-left: 20px;
     color:#EE82EE;
   }
 
-  .wrap{
-width: 1300px;
-height: 800px;
 
-  }
 .first{
     width:300px;
     margin-bottom: 10px;
@@ -261,4 +273,18 @@ height: 800px;
     font-weight: bold;
     font-size: 40px;
     color:#08073B;
+}
+
+.container1 {
+    background-color: yellow;
+
+    flex-direction: row;
+    margin-top: 75px;
+    margin-right: 20px; 
+	width: 1300px;
+}
+
+.middle {
+	margin-right: 20px; 
+	width: 500px;
 }

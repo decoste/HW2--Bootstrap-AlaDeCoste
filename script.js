@@ -28,7 +28,7 @@ $(document).ready(function () {
             $('#sub').text('Subject is not valid!');
         }
 
-        if (message.length >= 10) {
+        if (message.length >= 6) {
             console.log('Message is valid.')
             $("#text").hide();
         } else {
