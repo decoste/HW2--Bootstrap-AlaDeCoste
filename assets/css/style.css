@@ -10,7 +10,6 @@
   }
   .container2 {
     font-family:Arial Black;
-    width: 100px;
     display: flex;
 	flex-direction: row;
   }
@@ -24,6 +23,7 @@ nav{
     width: 400px;
     margin: 0 auto;
     margin-top: 20px;
+    padding: 15px;
 }
 h2{
     margin-left: 10px;
@@ -99,6 +99,11 @@ width: 350px;
 margin-top: 60px;
 margin-right: 40px;
 }
+.contact2{
+    width: 350px;
+    margin-top: 40px;
+    margin-right: 250px;
+    }
 .invalid p {
     display:inline-block;
     color: red;
