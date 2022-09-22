@@ -59,13 +59,13 @@
 
         <div class="center2">
             <h3>
-                <b>The data request: <br>
+                <b>Business Intelligence data request: <br>
                 </b>
            </h3>
            <h5>
             I am looking for the normal/abnormal results for 'SN shot' cPL and fPL.  
-            Columns: SAP, SN, kit type, lot number, result (normal/abnormal)
-            <b>The date range for this request:</b><br>
+            Columns: SAP, SN, kit type, lot number, result (normal/abnormal)<br>
+            <b>The date range for this request is:</b><br>
             most recent completed 12 months.<br>
            </h5>
             <hr>
@@ -73,7 +73,7 @@
         <div class="contact2">
             <h5>
                 <b>
-                Splunk query:
+                SQL query:
                 </b>
             </h5>
             <h6>SELECT<br>
@@ -103,8 +103,8 @@
                 AND  ( SDX_DATA_RUN.SDX_DATA_RUN_ID=SDX_DATA_RESULT.SDX_DATA_RUN_ID  )<br>
                 AND  <br>
                 SDX_DATA_RUN.RUN_START_TS  BETWEEN  '03-JAN-2019 01:00:00'  AND  '03-JAN-2020 01:00:00'<br>
-                AND DW.SDX_DATA_RUN.TEST_TYPE  IN  ( 5, 11  ) <br>
-                AND   SDX_DATA_RUN.TEST_TYPE  IN  ( 5, 11  )<br>
+                AND DW.SDX_DATA_RUN.TEST_TYPE  IN  (5, 11) <br>
+                AND  SDX_DATA_RUN.TEST_TYPE  IN  (5, 11)<br>
             </h6>
            
         </div>
