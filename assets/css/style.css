@@ -9,6 +9,7 @@
 	flex-direction: row;
   }
   .container2 {
+    font-family:Arial Black;
     width: 100px;
     display: flex;
 	flex-direction: row;
