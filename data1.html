@@ -77,7 +77,7 @@
                 Splunk query:
                 </b>
             </h5>
-            <h6>index="hema" "RED COUNT RATE FIT SLOPE" <br>
+            <h7>index="hema" "RED COUNT RATE FIT SLOPE" <br>
 
                 | rex field=source ".*/FILES/(?<sap>[0-9]+)/.*"<br>
                 
@@ -90,7 +90,7 @@
                 
                 |  stats median("RED COUNT RATE FIT SLOPE") by date<br>
 
-            </h6>
+            </h7>
            
         </div>
     </div>

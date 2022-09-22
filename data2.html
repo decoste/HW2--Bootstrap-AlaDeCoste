@@ -78,7 +78,7 @@
                 Splunk query:
                 </b>
             </h5>
-            <h6>index="c1" <br>
+            <h7>index="c1" <br>
                 sourcetype="C1_JSON"<br>
                 | rex field=source "C1_(?<serial>C1\d+)/" <br>
                 | spath path={}.initialization_complete output=initialization_complete<br>
@@ -103,7 +103,7 @@
                     initialization_complete_optics_ambient,<br>
                     initialization_complete_optics_heater<br>
 
-            </h6>
+            </h7>
            
         </div>
     </div>
