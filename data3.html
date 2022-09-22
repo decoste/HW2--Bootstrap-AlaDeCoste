@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- From Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Form Bootstabgit -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/Documents/fsf-09-node.pdf">
+    <title>Data2</title>
+</head>
+
+<body>
+    <!-- Nav-bar -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+        <div>
+            <h3>Ala DeCoste</h3>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="nav-left">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="index.html">Home</a>
+                    <a class="nav-item nav-link" href="contact.html">Contact</a>
+                    <a class="nav-item nav-link" href="portfolio.html">Portfolio</a>
+                    <a class="nav-item nav-link" href="analysis.html">Analysis Projects</a>
+                    <a class="nav-item nav-link" href="certifications.html">Certifications</a>
+                    <a class="nav-item nav-link" href="education.html">Education</a>
+                    <a class="nav-item nav-link" href="javascript:void(0);"
+                        onclick="javascipt:window.open('./assets/Documents/resume.pdf')"
+                        target="_blank">Resume</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <div class="container2">
+
+        <div class="center2">
+            <h3>
+                <b>The data request: <br>
+                </b>
+           </h3>
+           <h5>
+            I am looking for the normal/abnormal results for 'SN shot' cPL and fPL.  
+            Columns: SAP, SN, kit type, lot number, result (normal/abnormal)
+            <b>The date range for this request:</b><br>
+            most recent completed 12 months.<br>
+           </h5>
+            <hr>
+        </div>
+        <div class="contact2">
+            <h5>
+                <b>
+                Splunk query:
+                </b>
+            </h5>
+            <h6>SELECT<br>
+                DW.SDX_DATA_TYPE_7.LOT_STRING, <br>
+                CASE<br>
+                  WHEN DW.SDX_DATA_TYPE_23.RESULT = 1 THEN 'Normal'<br>
+                  ELSE 'Abnormal'<br>
+                END AS RESULT,<br>
+                CASE<br>
+                  WHEN DW.SDX_DATA_RUN.TEST_TYPE = 5 THEN 'cPL'<br>
+                  ELSE 'fPL'<br>
+                END AS KIT_TYPE,<br>
+                DW.BASIC_CUSTOMER_CURR.SAP_NUMBER_CONVERSION    <br>          
+                DW.IVLS_INSTALLATION.IVLS_SERIAL_NUMBER<br>
+              FROM<br>
+                DW.CUSTOMER_CURRENT  BASIC_CUSTOMER_CURR,<br>
+                DW.SDX_DATA_TYPE_7,<br>
+                DW.SDX_DATA_RUN,<br>
+                DW.SDX_DATA_TYPE_23,<br>
+                DW.IVLS_INSTALLATION,<br>
+                DW.SDX_DATA_RESULT <br>
+              WHERE<br>
+                ( IVLS_INSTALLATION.IVLS_INSTALLATION_ID=SDX_DATA_RUN.IVLS_INSTALLATION_ID  )<br>
+                AND  ( BASIC_CUSTOMER_CURR.CUSTOMER_CURRENT_ID=SDX_DATA_RUN.CUSTOMER_CURRENT_ID  )<br>
+                AND  ( SDX_DATA_RESULT.SDX_DATA_TYPE_23_ID=SDX_DATA_TYPE_23.SDX_DATA_TYPE_23_ID  )<br>
+                AND  ( SDX_DATA_TYPE_7.SDX_DATA_TYPE_7_ID=SDX_DATA_RESULT.SDX_DATA_TYPE_7_ID  )<br>
+                AND  ( SDX_DATA_RUN.SDX_DATA_RUN_ID=SDX_DATA_RESULT.SDX_DATA_RUN_ID  )<br>
+                AND  <br>
+                SDX_DATA_RUN.RUN_START_TS  BETWEEN  '03-JAN-2019 01:00:00'  AND  '03-JAN-2020 01:00:00'<br>
+                AND DW.SDX_DATA_RUN.TEST_TYPE  IN  ( 5, 11  ) <br>
+                AND   SDX_DATA_RUN.TEST_TYPE  IN  ( 5, 11  )<br>
+            </h6>
+           
+        </div>
+    </div>
+    <footer>&copy; 2020 Ala DeCoste</footer>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+
+</html>
