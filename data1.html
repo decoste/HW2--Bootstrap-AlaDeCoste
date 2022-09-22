@@ -59,23 +59,39 @@
         <!-- Links to my Github and LinkedIn account -->
 
         <div class="center">
-            <h2>what is the request: <br>
-            something here...</h2>
+            <h3>
+                <b>The data request: <br>
+                </b>
+           </h3>
+           <h4>
+            I would like to get the median of the<br>
+            “RED COUNT RATE FIT SLOPE” field for the hema insturment<br>
+            The data should be displayed in a line chart,<br>
+             and a monthly report should be sent via email.<br>
+            The date range for this request is: 30 days<br>
+           </h4>
             <hr>
         </div>
         <div class="contact">
             <h5>
-select studentID, FullName, sat_score, recordUpdated
-<br>
-from student <br>
-where<br>
-  (<br>
-    studentID between 1 and 5<br>
-    or studentID = 8 <br>
-    or FullName like '%Maximo%' <br>
-  ) <br>
-and sat_score NOT in (1000, 1400); <br>
+                <b>
+                Splunk query:
+                </b>
             </h5>
+            <h6>index="hema" "RED COUNT RATE FIT SLOPE" <br>
+
+                | rex field=source ".*/FILES/(?<sap>[0-9]+)/.*"<br>
+                
+                |  fields + "RED COUNT RATE FIT SLOPE", _time<br>
+                
+                | eval date = strftime(_time, "%Y %U")<br>
+                
+                | eval "RED COUNT RATE FIT SLOPE"=mvindex<br>
+                (split('RED COUNT RATE FIT SLOPE', ","),0)<br>
+                
+                |  stats median("RED COUNT RATE FIT SLOPE") by date<br>
+
+            </h6>
            
         </div>
     </div>
