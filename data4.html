@@ -59,14 +59,17 @@
 
         <div class="center2">
             <h3>
-                <b>Business Intelligence data request: <br>
+                <b>BgAdmin(SQL) data request: <br>
                 </b>
            </h3>
            <h5>
-            I am looking for the normal/abnormal results for 'SN shot' cPL and fPL.  
-            Columns: SAP, SN, kit type, lot number, result (normal/abnormal)<br>
-            <b>The date range for this request is:</b><br>
-            most recent completed 12 months.<br>
+            I am interested in the Dx QC runs data for two major practices:<br>
+            (SAP 883) and (SAP 170).<br>
+            You'll have to get this from the IV data warehouse.<br>
+            Species will be QC.<br>
+            The columns that we need:<br>
+            SAP, Serial, QC Lot Number,Run Date and Time,RBC,<br>
+            MCV,HGB,HCT,MCH,MCHC,PLT,WBC,NEU,LYM<br>
            </h5>
             <hr>
         </div>
@@ -76,34 +79,15 @@
                 SQL query:
                 </b>
             </h5>
-            <h7>SELECT<br>
-                DW.SDX_DATA_TYPE_7.LOT_STRING, <br>
-                CASE<br>
-                  WHEN DW.SDX_DATA_TYPE_23.RESULT = 1 THEN 'Normal'<br>
-                  ELSE 'Abnormal'<br>
-                END AS RESULT,<br>
-                CASE<br>
-                  WHEN DW.SDX_DATA_RUN.TEST_TYPE = 5 THEN 'cPL'<br>
-                  ELSE 'fPL'<br>
-                END AS KIT_TYPE,<br>
-                DW.BASIC_CUSTOMER_CURR.SAP_NUMBER_CONVERSION    <br>          
-                DW.IVLS_INSTALLATION.IVLS_SERIAL_NUMBER<br>
-              FROM<br>
-                DW.CUSTOMER_CURRENT  BASIC_CUSTOMER_CURR,<br>
-                DW.SDX_DATA_TYPE_7,<br>
-                DW.SDX_DATA_RUN,<br>
-                DW.SDX_DATA_TYPE_23,<br>
-                DW.IVLS_INSTALLATION,<br>
-                DW.SDX_DATA_RESULT <br>
-              WHERE<br>
-                (IVLS_INSTALLATION.IVLS_INSTALLATION_ID=SDX_DATA_RUN.IVLS_INSTALLATION_ID)<br>
-                AND  (BASIC_CUSTOMER_CURR.CUSTOMER_CURRENT_ID=SDX_DATA_RUN.CUSTOMER_CURRENT_ID)<br>
-                AND  (SDX_DATA_RESULT.SDX_DATA_TYPE_23_ID=SDX_DATA_TYPE_23.SDX_DATA_TYPE_23_ID)<br>
-                AND  (SDX_DATA_TYPE_7.SDX_DATA_TYPE_7_ID=SDX_DATA_RESULT.SDX_DATA_TYPE_7_ID)<br>
-                AND  (SDX_DATA_RUN.SDX_DATA_RUN_ID=SDX_DATA_RESULT.SDX_DATA_RUN_ID)<br>
-                AND  SDX_DATA_RUN.RUN_START_TS BETWEEN '03-JAN-2019 01:00:00' AND '03-JAN-2020 01:00:00'<br>
-                AND  DW.SDX_DATA_RUN.TEST_TYPE  IN (5, 11) <br>
-                AND  SDX_DATA_RUN.TEST_TYPE  IN (5, 11)<br>
+            <h7>select sap, serial, run_Date, qc_lot_number,<br>
+                rbc,mcv, hgb, hct,mch, mchc, plt, wbc, <br>
+                neu, lym<br>
+               from dx.run<br>
+               where qc_lot_number in (<br>
+                select distinct(qc_lot_number)<br>
+                from dx.run<br>
+                where sap in ('883', '170')<br>
+                          )<br>
             </h7>
            
         </div>
