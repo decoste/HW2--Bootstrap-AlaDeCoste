@@ -242,6 +242,37 @@ margin-left: 20px;
     color:#EE82EE;
   }
 
+  .capsule2{
+    margin-top: 75px;
+    margin-left: 20px;
+position: relative;
+  width:750px;
+  font-family: 'Sansita Swashed', cursive;
+height: 450px;
+  float:left;
+margin:40px;
+margin-left: 20px;
+}
+.capsule2 img{
+    width: 750px;
+    display: inline-block;
+    margin-right: 60px;
+}
+
+
+.capsule2:hover .overlay {
+    opacity: 1;
+  }
+  .capsule2 a {
+      color: white;
+  }
+  .capsule2 a{
+      padding: 60px;
+  }
+  .capsule2 a:hover {
+    color:#EE82EE;
+  }
+
 
 .first{
     width:300px;
