@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-
+    <!-- From Google font -->
     <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300&display=swap" rel="stylesheet">
-    <!-- From Bootstrabgit -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Form Bootstabgit -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
@@ -21,12 +21,16 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
-    <title>Analysis Projects</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/Documents/fsf-09-node.pdf">
+    <title>Contact</title>
 </head>
 
 <body>
     <!-- Nav-bar -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
         <div>
             <h3>Ala DeCoste</h3>
         </div>
@@ -44,26 +48,41 @@
                     <a class="nav-item nav-link" href="certifications.html">Certifications</a>
                     <a class="nav-item nav-link" href="education.html">Education</a>
                     <a class="nav-item nav-link" href="javascript:void(0);"
-                        onclick="javascipt:window.open('./assets/Documents/resume.pdf')" target="_blank">Resume</a>
+                        onclick="javascipt:window.open('./assets/Documents/resume.pdf')"
+                        target="_blank">Resume</a>
                 </div>
             </div>
         </div>
     </nav>
-    <!-- placeholder pictures -->
-    <p>placeholder</p>
+    <br>
+    <div class="container">
+        <!-- Links to my Github and LinkedIn account -->
 
-    
-    <div class="container1">
-      <div class="capsule">
-         <img src="./assets/images/data1.png" class="image">
-            <div class="overlay">
-            <a href="portfolio.html">test</a>
-            </div>
-       </div>
+        <div class="center">
+            <h2>what is the request: <br>
+            something here...</h2>
+            <hr>
+        </div>
+        <div class="contact">
+            <h5>
+select studentID, FullName, sat_score, recordUpdated
+<br>
+from student <br>
+where<br>
+  (<br>
+    studentID between 1 and 5<br>
+    or studentID = 8 <br>
+    or FullName like '%Maximo%' <br>
+  ) <br>
+and sat_score NOT in (1000, 1400); <br>
+            </h5>
+           
+        </div>
     </div>
-
     <footer>&copy; 2020 Ala DeCoste</footer>
     <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 
 </html>
